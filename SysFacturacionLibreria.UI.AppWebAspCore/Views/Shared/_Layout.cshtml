@@ -1,0 +1,221 @@
+﻿@*@*<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FacturacionLibreria</title>
+   <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+</head>
+<body>
+   <header>
+        <style>
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-collapse {
+                margin-top: 10px;
+            }
+
+            .nav-item {
+                margin-bottom: 5px;
+            }
+        </style>
+       
+
+        @if (User.Identity.IsAuthenticated)
+                {
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FacturacionLibreria</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+               
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="s nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Rol" asp-action="Index">Rol</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="fas fa-user nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index"> Usuario</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="CambiarPassword">Cambiar password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cliente" asp-action="Index">Cliente</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Index">Producto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Categoria" asp-action="Index">Categoria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Proveedor" asp-action="Index">Proveedor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Factura" asp-action="Index">Factura</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="DetalleDeVenta" asp-action="Index">Venta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="CerrarSesion">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+               
+            </div>
+        </nav>
+        }
+    </header>
+
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   @* <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Seguridad Web
+        </div>
+    </footer>*@
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FacturacionLibreria</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href=~/css/Menu.css />
+    <link rel="stylesheet" href="~/js/Menu.js" />
+
+   
+
+</head>
+<body>
+    <header>
+        @if (User.Identity.IsAuthenticated)
+        {
+     
+
+            <div class=''>
+                <div class="dashboard-nav">
+                    <header>
+                        <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
+                                                                                       class="brand-logo">
+                            <i class="fas fa-anchor"></i> <span>MENU</span>
+                        </a>
+                    </header>
+                    <nav class="dashboard-nav-list">
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Inicio</a>
+                            </li>
+                        </div>
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Rol" asp-action="Index"><i class="fas fa-user-tag"></i> Rol</a>
+                            </li>
+                          </div>
+                          <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Usuario" asp-action="Index"><i class="fas fa-user"></i> Usuario</a>
+                            </li>
+                        </div>
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Usuario" asp-action="CambiarPassword"><i class="fas fa-key"></i> Cambiar password</a>
+                            </li>
+                        </div>
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Cliente" asp-action="Index"><i class="fas fa-users"></i> Cliente</a>
+                            </li>
+                        </div>
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Producto" asp-action="Index"><i class="fas fa-book"></i> Producto</a>
+                            </li>
+                        </div>
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Categoria" asp-action="Index"><i class="fas fa-folder-open"></i> Categoria</a>
+                            </li>
+                        </div>
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Proveedor" asp-action="Index"><i class="fas fa-truck"></i> Proveedor</a>
+                            </li>
+                        </div>
+                        @*en esta parte esta el submenu de m*@
+                        <div class='dashboard-nav-dropdown'>
+                            <li class="nav-item">
+                                <a class="dashboard-nav-item" asp-area="" asp-controller="Factura" asp-action="Index"><i class="fas fa-file-invoice"></i> Factura</a>
+                            </li>
+                        </div>
+                        <li class="nav-item">
+                            <a class="dashboard-nav-item" asp-area="" asp-controller="DetalleDeVenta" asp-action="Index"><i class="fas fa-shopping-cart"></i> Venta</a>
+                        </li>
+                       @* <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a><a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>*@
+                        <div class="nav-item-divider"></div>
+                       
+                        <li class="nav-item">
+                            <a class="" asp-area="" asp-controller="Usuario" asp-action="CerrarSesion"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                        </li>
+                    </nav>
+                </div>
+                
+            </div>
+        }
+    </header>
+
+ 
+    <div class='dashboard-app'>
+   @* <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>*@
+    <div class='dashboard-content'>
+          <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+            
+        </div>
+    </div>
+</div>
+   
+</body>
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(function () {
+            $("form input[name]").trigger("blur");
+        });
+    </script>
+}

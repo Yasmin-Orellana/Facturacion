@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using SysFacturacionLibreria.AccesoADatos;
+using SysFacturacionLibreria.EntidadesDeNegocio;
+
+namespace SysFacturacionLibreria.LogicaDeNegocio
+{
+    public class ProveedorBL
+    {
+        public async Task<int> CrearAsync(Proveedor pProveedor)
+        {
+            return await ProveedorDAL.CrearAsync(pProveedor);
+        }
+        public async Task<int> ModificarAsync(Proveedor pProveedor)
+        {
+            return await ProveedorDAL.ModificarAsync(pProveedor);
+        }
+        public async Task<int> EliminarAsync(Proveedor pProveedor)
+        {
+            return await ProveedorDAL.EliminarAsync(pProveedor);
+        }
+        public async Task<Proveedor> ObtenerPorIdAsync(Proveedor pProveedor)
+        {
+            return await ProveedorDAL.ObtenerPorIdAsync(pProveedor);
+        }
+        public async Task<List<Proveedor>> ObtenerTodosAsync()
+        {
+            return await ProveedorDAL.ObtenerTodosAsync();
+        }
+        public async Task<List<Proveedor>> BuscarAsync(Proveedor pProveedor)
+        {
+            return await ProveedorDAL.BuscarAsync(pProveedor);
+        }
+    }
+
+}
+

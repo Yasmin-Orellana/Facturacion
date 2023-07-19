@@ -1,0 +1,66 @@
+﻿@model SysFacturacionLibreria.EntidadesDeNegocio.Factura
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Factura</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (Model != null)
+            {
+                <div class="form-group">
+                    <label asp-for="NFactura" class="control-label"></label>
+                    <input asp-for="NFactura" class="form-control" value="@Model.NFactura" />
+                    <span asp-validation-for="NFactura" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Fecha" class="control-label"></label>
+                    <input asp-for="Fecha" class="form-control" value="@Model.Fecha" />
+                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NIT" class="control-label"></label>
+                    <input asp-for="NIT" class="form-control" value="@Model.NIT" />
+                    <span asp-validation-for="NIT" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Direccion" class="control-label"></label>
+                    <input asp-for="Direccion" class="form-control" value="@Model.Direccion" />
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" class="form-control" value="@Model.Telefono" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Correo" class="control-label"></label>
+                    <input asp-for="Correo" type="text" class="form-control" value="@Model.Correo" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Total" class="control-label"></label>
+                    <input asp-for="Total" class="form-control" value="@Model.Total" />
+                    <span asp-validation-for="Total" class="text-danger"></span>
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la Lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
